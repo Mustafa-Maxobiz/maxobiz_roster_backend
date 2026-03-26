@@ -39,7 +39,7 @@ def send_invitation_email(invitation, request):
     invite_url = f"{frontend_url.rstrip('/')}/invite/{invitation.key}/"
     
     # Get site name from settings or use default
-    site_name = getattr(settings, 'SITE_NAME', 'Bokado')
+    site_name = getattr(settings, 'SITE_NAME', 'MaxobizRoster')
     
     ctx = {
         "invite_url": invite_url,

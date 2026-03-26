@@ -2,13 +2,13 @@ from django.urls import path
 from users.views.auth import LoginView, VerifyOTPView, ResendOTPView
 from users.views.forget_password import ForgotPasswordView, ResetPasswordView
 from users.views.social_auth import SocialLoginView
-from users.views.signup import SignupView
+from users.views.accept_invite import AcceptInvitationView
 from users.views.logout import LogoutView
 from users.views.user import UserView
 from users.views.invitation import InvitationView
 
 urlpatterns = [
-    path('auth/signup/', SignupView.as_view(), name='signup'),
+    path('auth/accept-invite/', AcceptInvitationView.as_view(), name='accept-invite'),
     path('auth/login/', LoginView.as_view(), name='login'),
     path('auth/logout/', LogoutView.as_view(), name='logout'),
     path('auth/verify-otp/', VerifyOTPView.as_view(), name='verify-otp'),

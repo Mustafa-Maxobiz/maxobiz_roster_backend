@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "bokado-backend-django"
+name = "maxobizroster-backend-django"
 version = "0.1.0"
-description = "bokado initialized"
+description = "maxobizroster initialized"
 authors = ["UmmeeAwan <ummee.awan@maxobiz.com>"]
 package-mode = false
 

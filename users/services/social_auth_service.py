@@ -149,7 +149,7 @@ def get_or_create_user_from_social(payload, first_name=None, last_name=None):
             username=username,
             first_name=first_name or payload.get("first_name", ""),
             last_name=last_name or payload.get("last_name", ""),
-            role=User.Role.CUSTOMER,
+            role=User.Role.EMP,
             is_active=True,
         )
         created = True

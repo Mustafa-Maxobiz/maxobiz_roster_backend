@@ -17,9 +17,9 @@ class UserManager(BaseUserManager):
         return user
 
     def create_customer(self, email, password=None, **extra_fields):
-        """Create a normal user with CUSTOMER role"""
+        """Create a normal user with EMP role"""
         from users.models import User  # avoid circular import
-        extra_fields.setdefault("role", User.Role.CUSTOMER)
+        extra_fields.setdefault("role", User.Role.EMP)
         extra_fields.setdefault("is_staff", False)
         extra_fields.setdefault("is_superuser", False)
         return self._create_user(email, password, **extra_fields)

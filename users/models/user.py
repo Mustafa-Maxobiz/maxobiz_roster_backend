@@ -9,12 +9,12 @@ class User(AbstractUser):
 
     class Role(models.TextChoices):
         ADMIN = "admin", _("Admin")
-        EXPERT = "expert", _("Expert")
-        CUSTOMER = "customer", _("Customer")
+        HR = "hr", _("HR")
+        EMP = "emp", _("EMP")
 
     username = models.CharField(max_length=150, unique=True)
     email = models.EmailField(_("email address"), unique=True)
-    role = models.CharField(max_length=20, choices=Role.choices, default=Role.CUSTOMER)
+    role = models.CharField(max_length=20, choices=Role.choices, default=Role.EMP)
     # failed_login_attempts = models.PositiveIntegerField(default=0)
     # login_ban_until = models.DateTimeField(null=True, blank=True)
     is_email_verified = models.BooleanField(default=False)

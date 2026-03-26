@@ -16,7 +16,7 @@ class UserServices:
         # Pop password and email to pass explicitly
         password = validated_data.pop("password")
         email = validated_data.pop("email")
-        role = validated_data.pop("role", User.Role.CUSTOMER)
+        role = validated_data.pop("role", User.Role.EMP)
         is_active = validated_data.pop("is_active", True)
 
         # Validate password before creating user
@@ -26,9 +26,9 @@ class UserServices:
         except DjangoValidationError as e:
             raise_validation_error(e.messages, field="password")
 
-        # Always create a normal user from public signup flow
+        # Always create a normal user for invitation-based onboarding
         if role == User.Role.ADMIN:
-            role = User.Role.CUSTOMER
+            role = User.Role.EMP
 
         user = User.objects.create_customer(
             email=email,
@@ -62,10 +62,6 @@ class UserServices:
         invitation.save(update_fields=["accepted"])
 
         return user
-
-    @staticmethod
-    def send_signup_otp(user):
-        return OTPService.send_otp(user.email, user=user)
 
     @staticmethod
     def get_user(user_id_or_email):

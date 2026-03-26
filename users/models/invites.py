@@ -9,7 +9,7 @@ class Invitation(AbstractBaseInvitation):
     role = models.CharField(
         max_length=20,
         choices=User.Role.choices,
-        default=User.Role.CUSTOMER,
+        default=User.Role.EMP,
     )
     inviter = models.ForeignKey(
         User,

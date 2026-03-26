@@ -1,6 +1,6 @@
-# Bokado Backend (Django)
+# MaxobizRoster Backend (Django)
 
-Bokado is a Django + DRF backend scaffold with JWT auth, standardized API responses, pagination, CORS, and Celery wiring. It includes a small `common` utilities package and a stub `users` app.
+MaxobizRoster is a Django + DRF backend scaffold with JWT auth, standardized API responses, pagination, CORS, and Celery wiring. It includes a small `common` utilities package and a stub `users` app.
 
 ## Stack
 
