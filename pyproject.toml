@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "bokado-backend-django"
+version = "0.1.0"
+description = "bokado initialized"
+authors = ["UmmeeAwan <ummee.awan@maxobiz.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.12,<4.0"
+django = "5.2.11"
+djangorestframework = "3.16.1"
+djangorestframework-simplejwt = "5.5.1"
+django-cors-headers = "4.9.0"
+django-environ = "0.12.0"
+django-timezone-field = "7.2.1"
+celery = "5.6.2"
+django-celery-beat = "2.8.1"
+django-celery-results = "2.6.0"
+httpx = "0.28.1"
+requests = "2.32.5"
+psycopg2-binary = "2.9.11"
+python-decouple = "^3.8"
+dj-database-url = "^3.1.0"
+pyotp = "2.9.0"
+redis = "^7.1.1"
+django-redis = "^6.0.0"
+django-axes = "^8.3.1"
+pyjwt = "^2.10.1"
+cryptography = "^43.0.3"
+
+[tool.poetry.group.dev.dependencies]
+black = "26.1.0"
+isort = "7.0.0"
+pytest = "9.0.2"
+pytest-django = "4.11.1"
+django-debug-toolbar = "6.2.0"
+python-dotenv = "1.2.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
