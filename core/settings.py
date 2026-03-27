@@ -36,7 +36,9 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "users.apps.UsersConfig",  # ✅ Uncomment/add this line
+    "users.apps.UsersConfig",
+    "org_structure.apps.OrgStructureConfig",  # <-- Add this line
+    # ✅ Uncomment/add this line
 ]
 
 
@@ -148,6 +150,8 @@ REST_FRAMEWORK = {
     ],
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated",
+        # "rest_framework.permissions.AllowAny",  # <--- changed from IsAuthenticated
+
     ],
     # Use your custom exception handler
     "EXCEPTION_HANDLER": "common.exceptions.custom_exception_handler",
