@@ -20,6 +20,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('users.urls')),  # Include your users app URLs
-    path('api/v1/org/', include('org_structure.urls')),    #
+    path('api/v1/org/', include('org_structure.urls')),
+    path('api/', include('positions.urls')),  # <-- plug in the positions app
 
 ]

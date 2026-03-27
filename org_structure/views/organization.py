@@ -45,3 +45,13 @@ class OrganizationViewSet(viewsets.ModelViewSet):
             message="Organization deleted successfully",
             status=status.HTTP_204_NO_CONTENT
         )
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        return APIResponse(
+            success=True,
+            message="Organization details fetched successfully",
+            data=serializer.data,
+            status=status.HTTP_200_OK
+        )

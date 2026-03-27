@@ -6,6 +6,7 @@ from users.views.accept_invite import AcceptInvitationView
 from users.views.logout import LogoutView
 from users.views.user import UserView
 from users.views.invitation import InvitationView
+from users.views.user_profile import UserProfileView
 
 urlpatterns = [
     path('auth/accept-invite/', AcceptInvitationView.as_view(), name='accept-invite'),
@@ -20,5 +21,7 @@ urlpatterns = [
     path("users/", UserView.as_view(), name="user-view"),
     path("invitations/", InvitationView.as_view(), name="invitation-view"),
     path("users/<int:user_id>/", UserView.as_view(), name="user-delete"),
+path("profile/", UserProfileView.as_view(), name="user-profile")
+
 
 ]

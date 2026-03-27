@@ -38,6 +38,8 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "users.apps.UsersConfig",
     "org_structure.apps.OrgStructureConfig",  # <-- Add this line
+    "positions.apps.PositionsConfig",  # 👈 add this
+
     # ✅ Uncomment/add this line
 ]
 
@@ -149,8 +151,8 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",
-        # "rest_framework.permissions.AllowAny",  # <--- changed from IsAuthenticated
+        # "rest_framework.permissions.IsAuthenticated",
+        "rest_framework.permissions.AllowAny",  # <--- changed from IsAuthenticated
 
     ],
     # Use your custom exception handler
