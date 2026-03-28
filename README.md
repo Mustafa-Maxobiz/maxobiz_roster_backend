@@ -1,7 +1,6 @@
 # MaxobizRoster Backend (Django)
 
-MaxobizRoster is a Django + DRF backend scaffold with JWT auth, standardized API responses, pagination, CORS, and Celery wiring. It includes a small `common` utilities package and a stub `users` app.
-
+MaxobizRoster is a Django + DRF backend for roster and organizational management, featuring JWT auth, standardized API responses, pagination, CORS, and Celery wiring. It includes a commonutilities package, ausersapp, anorg_structureapp, and apositions app.
 ## Stack
 
 - Python 3.12
@@ -17,6 +16,9 @@ MaxobizRoster is a Django + DRF backend scaffold with JWT auth, standardized API
 - `common/` API response wrapper, pagination, permissions, exceptions, mixins
 - `users/` stub Django app (not enabled by default)
 - `manage.py` Django management entry point
+- `org_structure/` Groups, Organizations, Departments(All org_structure models use soft-delete (is_deleted = True) instead of hard deletes.)
+-  `positions/` Designations and Levels
+
 
 ## Features Included
 
@@ -28,6 +30,7 @@ MaxobizRoster is a Django + DRF backend scaffold with JWT auth, standardized API
 - JWT authentication defaults via SimpleJWT
 - CORS + CSRF trusted origins from environment
 - Celery configuration (broker + results backend)
+- Soft-delete pattern across org_structure models
 
 ## Setup
 

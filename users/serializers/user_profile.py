@@ -10,7 +10,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
         model = UserProfile
         fields = [
             "id", "pic", "address", "dob",
-            "job_designation", "level",
+            "job_designation",
             "shift_start", "shift_end", "is_flexible", "threshold_hours",
             "job_status", "joining_date", "hickvision_id", "work_mode"
         ]
